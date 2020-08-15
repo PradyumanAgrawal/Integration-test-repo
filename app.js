@@ -6,9 +6,9 @@ const app = express();;
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname,'views','index.html'));
 })
-PORT=process.env.PORT||3000;
-app.listen(PORT,()=>{
-        console.log('listening on port'+PORT)
+
+app.listen(process.env.PORT,()=>{
+        console.log('listening on port'+process.env.PORT)
 })
 
 require('./webhook.js')(app);
